@@ -22,7 +22,7 @@ Hello everyone! Wishing you a happy New Year 🎉 and all the best for 2024! We'
 
 AstroPaper now leverages the power and capabilities of Astro v4. However, it’s a subtle upgrade and won’t break most Astro users.
 
-![Astro v4](https://astro.build/_astro/header-astro-4.GLp8HjfV.webp)
+<img src="https://astro.build/_astro/header-astro-4.GLp8HjfV.webp" alt="Astro v3" height="100%" width="100%"/>
 
 ### Replace `postSlug` with Astro Content `slug` [#197](https://github.com/satnaing/astro-paper/pull/197)
 
