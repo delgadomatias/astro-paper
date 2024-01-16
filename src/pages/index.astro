@@ -1,10 +1,10 @@
 ---
-import Card from "@components/Card";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import Hr from "@components/Hr.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Socials from "@components/Socials.astro";
+import { HoverEffect } from "@components/ui/card-hover-effect";
 import { SOCIALS } from "@config";
 import Layout from "@layouts/Layout.astro";
 import getSortedPosts from "@utils/getSortedPosts";
@@ -74,13 +74,9 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           <section id="featured">
             <h2>Featured</h2>
             <ul>
-              {featuredPosts.map(({ data, slug }) => (
-                <Card
-                  href={`/posts/${slug}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              ))}
+              <li class="my-6">
+                <HoverEffect items={featuredPosts} client:load />
+              </li>
             </ul>
           </section>
           <Hr />
@@ -89,22 +85,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     }
 
     <section id="recent-posts">
-      <h2>Recent Posts</h2>
+      <h2 class="mb-8">Recent Posts</h2>
       <ul>
-        {
-          sortedPosts
-            .filter(({ data }) => !data.featured)
-            .map(
-              ({ data, slug }, index) =>
-                index < 4 && (
-                  <Card
-                    href={`/posts/${slug}`}
-                    frontmatter={data}
-                    secHeading={false}
-                  />
-                )
-            )
-        }
+        <HoverEffect
+          client:load
+          isUnevenGrid={true}
+          items={sortedPosts.filter(({ data }) => !data.featured).slice(0, 4)}
+        />
       </ul>
       <div class="all-posts-btn-wrapper">
         <LinkButton href="/posts">
@@ -156,6 +143,6 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     @apply text-2xl font-semibold tracking-wide;
   }
   .all-posts-btn-wrapper {
-    @apply my-8 text-center;
+    @apply mb-8 mt-24 text-center;
   }
 </style>
