@@ -20,7 +20,12 @@ export const HoverEffect = ({
   const classForLastItem = items.length % 2 === 1 ? "md:col-span-2" : "";
 
   return (
-    <div className={cn("grid grid-cols-1 md:grid-cols-2 ", className)}>
+    <div
+      className={cn("grid grid-cols-1 md:grid-cols-2", className)}
+      style={{
+        gridAutoRows: "1fr",
+      }}
+    >
       {items.map(
         (
           { id, slug, data: { description, pubDatetime, modDatetime, title } },
@@ -36,7 +41,7 @@ export const HoverEffect = ({
             <AnimatePresence>
               {hoveredIndex === idx && (
                 <motion.span
-                  className="absolute inset-0 block h-full w-full rounded-3xl bg-white dark:bg-[#374054]"
+                  className="absolute inset-0 hidden h-full  w-full rounded-3xl bg-white md:block dark:bg-[#374054]"
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}
                   animate={{
