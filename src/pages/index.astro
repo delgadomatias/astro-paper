@@ -89,6 +89,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       <ul>
         <HoverEffect
           client:load
+          isUnevenGrid={true}
           items={sortedPosts.filter(({ data }) => !data.featured).slice(0, 4)}
         />
       </ul>
@@ -142,6 +143,6 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     @apply text-2xl font-semibold tracking-wide;
   }
   .all-posts-btn-wrapper {
-    @apply my-8  text-center;
+    @apply mb-8 mt-24 text-center;
   }
 </style>
