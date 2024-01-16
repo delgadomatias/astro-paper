@@ -1,12 +1,12 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import Pagination from "@components/Pagination.astro";
+import { HoverEffect } from "@components/ui/HoverEffect";
+import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import Pagination from "@components/Pagination.astro";
-import Card from "@components/Card";
-import { SITE } from "@config";
+import type { CollectionEntry } from "astro:content";
 
 export interface Props {
   currentPage: number;
@@ -21,11 +21,7 @@ const { currentPage, totalPages, paginatedPosts } = Astro.props;
   <Header activeNav="posts" />
   <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
     <ul>
-      {
-        paginatedPosts.map(({ data, slug }) => (
-          <Card href={`/posts/${slug}`} frontmatter={data} />
-        ))
-      }
+      <HoverEffect items={paginatedPosts} client:load />
     </ul>
   </Main>
 
@@ -38,3 +34,4 @@ const { currentPage, totalPages, paginatedPosts } = Astro.props;
 
   <Footer noMarginTop={totalPages > 1} />
 </Layout>
+@components/ui/HoverEffect

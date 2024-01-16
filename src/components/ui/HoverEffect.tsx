@@ -34,7 +34,7 @@ export const HoverEffect = ({
           <a
             href={`/posts/${slug}`}
             key={id}
-            className={`group relative block h-full  w-full py-2 md:p-2 ${idx === items.length - 1 ? classForLastItem : ""} ${isUnevenGrid && idx % 2 !== 0 ? "mt-12" : ""}`}
+            className={`group relative block h-full  w-full py-2 md:p-2 ${idx === items.length - 1 ? classForLastItem : ""} ${isUnevenGrid && idx % 2 !== 0 ? "md:mt-12" : ""}`}
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
