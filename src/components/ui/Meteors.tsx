@@ -9,6 +9,7 @@ export const Meteors = ({
   className?: string;
 }) => {
   const meteors = new Array(number || 20).fill(true);
+
   return (
     <>
       {meteors.map((el, idx) => (
