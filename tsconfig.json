@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "F:/astro-paper/src",
+    "baseUrl": "./src",
     "jsx": "preserve",
     "paths": {
       "@assets/*": ["assets/*"],
@@ -11,8 +11,8 @@
       "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
     },
-    "jsxImportSource": "react"
-  }
+    "jsxImportSource": "react",
+  },
 }

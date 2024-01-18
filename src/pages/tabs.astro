@@ -1,0 +1,33 @@
+---
+import Header from "@components/Header.astro";
+import Components from "@layouts/Components.astro";
+import { Tabs as TabsComponent } from "@components/ui/Tabs";
+import { TabsDemo } from "@components/ui/TabsDemo";
+---
+
+<Components title="Tabs Component">
+  <Header />
+  <div class="wrapper" style="min-height: calc(100svh - 105px);">
+    <div class="card-wrapper">
+      <div
+        class="b relative mx-auto my-40 flex h-[20rem] w-full max-w-5xl flex-col items-start justify-start [perspective:1000px] md:h-[40rem]"
+      >
+        <TabsDemo client:load />
+      </div>
+    </div>
+  </div>
+</Components>
+
+<style>
+  .wrapper {
+    @apply mx-auto flex h-full w-full max-w-3xl flex-col items-center justify-center;
+  }
+
+  .heading {
+    @apply text-4xl;
+  }
+
+  .card-wrapper {
+    @apply flex h-[30rem] w-full items-center justify-center md:h-[20rem];
+  }
+</style>

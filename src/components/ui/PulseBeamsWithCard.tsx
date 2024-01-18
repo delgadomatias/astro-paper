@@ -78,7 +78,7 @@ type Props = {
   items: CollectionEntry<"blog">[];
 };
 
-export const PulseBeams = ({ items }: Props) => {
+export const PulseBeamsWithCard = ({ items }: Props) => {
   return (
     <>
       <div className="relative flex h-[500px] w-full  items-center justify-center overflow-hidden antialiased md:h-[400px]">

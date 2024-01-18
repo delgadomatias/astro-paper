@@ -1,0 +1,30 @@
+---
+import Header from "@components/Header.astro";
+import Components from "@layouts/Components.astro";
+import { getCollection } from "astro:content";
+import { PulseBeams as PB } from "@components/ui/PulseBeams";
+const items = await getCollection("blog");
+---
+
+<Components title="PulseBeams Component">
+  <Header />
+  <div class="wrapper" style="min-height: calc(100svh - 105px);">
+    <div class="card-wrapper">
+      <PB client:load />
+    </div>
+  </div>
+</Components>
+
+<style>
+  .wrapper {
+    @apply mx-auto flex h-full w-full max-w-3xl flex-col items-center justify-center;
+  }
+
+  .heading {
+    @apply text-4xl;
+  }
+
+  .card-wrapper {
+    @apply flex h-[30rem] w-full items-center justify-center md:h-[20rem];
+  }
+</style>

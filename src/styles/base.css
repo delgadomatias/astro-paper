@@ -11,6 +11,7 @@
     --color-card: 230, 230, 230;
     --color-card-muted: 205, 205, 205;
     --color-border: 100, 150, 200;
+    @apply font-plexMono;
   }
 
   html[data-theme="dark"] {
@@ -20,6 +21,7 @@
     --color-card: 52, 63, 96;
     --color-card-muted: 138, 51, 2;
     --color-border: 138, 139, 255;
+    @apply font-firaSans;
   }
 
   #sun-svg,
@@ -32,7 +34,7 @@
     display: block;
   }
   body {
-    @apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base 
+    @apply flex min-h-[100svh] flex-col bg-skin-fill text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
   }
   section,

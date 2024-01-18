@@ -1,0 +1,31 @@
+---
+import Header from "@components/Header.astro";
+import { CardStack as Card } from "@components/ui/CardStack";
+import Components from "@layouts/Components.astro";
+import { getCollection } from "astro:content";
+const items = await getCollection("blog");
+---
+
+<Components title="CardStack Component">
+  <Header />
+  <div class="wrapper" style="min-height: calc(100svh - 105px);">
+    <h1 class="heading">CardStack</h1>
+    <div class="card-wrapper">
+      <Card items={items.slice(0, 6)} client:load />
+    </div>
+  </div>
+</Components>
+
+<style>
+  .wrapper {
+    @apply mx-auto flex h-full w-full max-w-3xl flex-col items-center justify-center;
+  }
+
+  .heading {
+    @apply text-4xl;
+  }
+
+  .card-wrapper {
+    @apply flex h-[30rem] w-full items-center justify-center md:h-[20rem];
+  }
+</style>
