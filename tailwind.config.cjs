@@ -65,7 +65,8 @@ module.exports = {
       },
       fontFamily: {
         plexMono: ["IBM Plex Mono", "monospace"],
-        firaSans: ["Fira Sans"]
+        firaSans: ["Fira Sans", "sans-serif"],
+        tanker: ["Tanker", "sans-serif"],
       },
       animation: {
         "meteor-effect": "meteor 5s linear infinite",

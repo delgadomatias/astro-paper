@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Tanker";
+  src: url("../../public/tanker.otf") format("opentype");
+  font-weight: normal;
+}
+
 @layer base {
   * {
     scrollbar-color: rgba(var(--color-border), 0.5) rgba(var(--color-fill), 0.5);
